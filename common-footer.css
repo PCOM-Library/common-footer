@@ -1,0 +1,159 @@
+#common-footer {
+	a {
+		color: var(--pcom-white);
+		text-decoration: none;
+	}
+	a:focus {
+		outline: solid 2px currentColor;
+		outline-offset: 4px !important;
+	}
+}
+
+#pcomlib-footer {
+	background-color: var(--pcom-dark-blue);
+	padding: var(--pcom-body-padding);
+	position: relative;
+	text-align: center;
+
+	nav {
+		margin: .5em 0 .75em;;
+	}
+
+	a:focus {
+		outline: solid 2px currentColor;
+		outline-offset: 4px !important;
+	}
+	nav ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		margin: 0;
+	}
+	nav ul li {
+		display: inline-block;
+	}
+}
+
+nav#pcomlib-footer-links ul li {
+	padding: 0 0.5rem;
+	line-height: 1.75;
+
+	a {
+		display: inline-block;
+		padding: 0.125rem 0;
+		line-height: normal;
+		white-space: nowrap;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+	a:focus {
+		outline-offset: 4px;
+	}
+}
+		
+nav#pcomlib-social-links ul li {
+	a { 
+		text-align: center;
+		height: 2.375rem;
+		width: 2.375rem;
+		line-height: 2.375rem;
+		border-radius: 50%;
+		display: block;
+		border: solid 2px transparent;
+	}
+	a:hover {
+		border-color: var(--pcom-white);
+	}
+	a:focus {
+		outline-offset: 2px;
+	}
+
+	a.mail {
+		background-color: var(--pcom-yellow);
+		.fa {
+			position: relative;
+			color: #000;
+			top: -2px;
+			left: 0.5px;
+		}
+	}
+
+
+	a.youtube {
+		background-color: var(--pcom-dark-red);
+		.fa {
+			position: relative;
+			top: -1.5px;
+		}
+	}
+}
+nav#pcomlib-social-links ul li + li {
+	margin-left: .375rem;
+}
+
+#pcom-links-footer {
+	font-size: .75rem;
+	outline-offset: -3px;
+	padding: var(--pcom-body-padding);
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	text-align: left;
+	display: flex;
+	background: var(--pcom-text);
+	color: var(--pcom-white);
+	
+	ul {
+		display: flex;
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: center;
+		align-content: center;
+		align-items: stretch;
+	}
+	ul li {
+  		display: inline-block;
+  		margin-bottom: 0;
+  		align-self: center;
+  		padding: 0 .5em;
+	}
+	a {	
+		display: block;
+		line-height: 1;
+		white-space: nowrap;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+	a img { 
+		height: 2em;
+	}
+	li + li a {
+		position: relative;
+		top: .25em;
+	}
+}
+
+#pcom-copyright {
+	text-align: right;
+	font-size: .75rem;
+	
+	span {
+		display: block;
+	}
+}
+
+@media only screen and (max-width: 40rem) {
+	#pcom-links-footer {
+		display: block;
+	}
+	#pcom-copyright { 
+		margin: .75rem 0;
+		text-align: center;
+	}
+}
