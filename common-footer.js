@@ -1,3 +1,12 @@
+
+
+const springshareSites = {
+	'libguides': {site_id: '4408', footer_id:'s-lib-footer-public'},
+	'libcal': {site_id: '19957', footer_id: 's-lc-public-footer'},
+'libanswers': {site_id: '20029',footer_id: 's-la-public-footer'}
+}
+
+
 const footerObserver = new MutationObserver(function(mutations_list) {
 	mutations_list.forEach(function(mutation) {
 		for(added_node of mutation.addedNodes) {
@@ -13,9 +22,6 @@ const footerObserver = new MutationObserver(function(mutations_list) {
 footerObserver.observe(document.body, { subtree: true, childList: true });
 
 async function loadCommonFooter() {
-	let default_footer = document.getElementById('default-footer');
-	let footer = default_footer.closest('footer');
-
 	// grab the commont footer
 	try {
 		let response = await fetch('https://d3s1hlfjjwhvha.cloudfront.net/springshare/common-footer/common-footer.html');
@@ -25,16 +31,32 @@ async function loadCommonFooter() {
 			throw new Error(`HTTP error! Status: ${response.status}`);
 
 		let common_footer = await response.text();
-		default_footer.insertAdjacentHTML('afterend', common_footer);
+		applyCommonFooter(common_footer)
 
-		// hide default footer or mark it
-		default_footer.remove();
-
-		
 	} catch(err) {
 			console.error('Error fetching common_footer.html');
 			console.error(err);
 	};
+}
+
+async function applyCommonFooter(html) {
+	let default_footer = document.getElementById('default-footer');
+	if(!default_footer) return;
+
+	// inset the common footer
+	default_footer.insertAdjacentHTML('afterend', html);
+
+	// hide the springshare footer
+	let domain = window.location.hostname.replace('.pcom.edu','');
+	let site = springshareSites[domain];
+	document.getElementById('site.footer_id').remove();
+	
+	// change the login URL
+	let login = document.querySelector('#springshare-footer a');
+	login.href = login.href + site.site_id;
+
+	// hide default footer
+	default_footer.remove();
 }
 
 window.addEventListener('DOMContentLoaded', function(evt) {
