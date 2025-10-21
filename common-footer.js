@@ -49,7 +49,7 @@ async function applyCommonFooter(html) {
 	// hide the springshare footer
 	let domain = window.location.hostname.replace('.pcom.edu','');
 	let site = springshareSites[domain];
-	document.getElementById('site.footer_id').remove();
+	document.getElementById(site.footer_id).remove();
 	
 	// change the login URL
 	let login = document.querySelector('#springshare-footer a');
