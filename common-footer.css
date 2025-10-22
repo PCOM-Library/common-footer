@@ -95,6 +95,13 @@ nav#pcomlib-social-links ul li {
 		}
 	}
 
+	a.calendar {
+		background-color: var(--pcom-blue);
+		.fa {
+			position: relative;
+			top: -1px;
+		}
+	}
 
 	a.youtube {
 		background-color: var(--pcom-dark-red);
