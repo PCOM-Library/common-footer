@@ -70,45 +70,37 @@ nav#pcomlib-footer-links ul li {
 nav#pcomlib-social-links ul li {
 	a {
 		text-align: center;
-		height: 2.375rem;
-		width: 2.375rem;
-		line-height: 2.375rem;
+		height: 2.5rem;
+		width: 2.5rem;
+		line-height: 2.5rem;
 		border-radius: 50%;
 		display: block;
 		border: solid 2px transparent;
+		
+		span {
+			font-size: 1.125rem;
+		}
 	}
 
-	a:hover {
 		border-color: var(--pcom-white);
+	a:hover {
 	}
 	a:focus {
 		outline-offset: 2px;
+		outline-color: var(--pcom-white);
 	}
 
 	a.mail {
 		background-color: var(--pcom-yellow);
-		.fa {
-			position: relative;
-			color: #000;
-			top: -2px;
-			left: 0.5px;
-		}
+		color: var(--pcom-text);
 	}
 
 	a.calendar {
 		background-color: var(--pcom-blue);
-		.fa {
-			position: relative;
-			top: -1px;
-		}
 	}
 
 	a.youtube {
 		background-color: var(--pcom-dark-red);
-		.fa {
-			position: relative;
-			top: -1.5px;
-		}
 	}
 }
 nav#pcomlib-social-links ul li + li {
