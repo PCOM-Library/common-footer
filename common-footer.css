@@ -163,7 +163,7 @@ nav#pcomlib-social-links ul li + li {
 	text-align: right;
 	font-size: .75rem;
 
-	span {
+	span:not(.year)  {
 		display: block;
 	}
 }
