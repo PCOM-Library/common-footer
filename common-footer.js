@@ -46,6 +46,9 @@ async function applyCommonFooter(html) {
 	// inset the common footer
 	default_footer.insertAdjacentHTML('afterend', html);
 
+	// update the copyright year
+	document.querySelector('#pcom-copyright span.year').innerText = ( new Date().getFullYear() );
+
 	// hide the springshare footer
 	let domain = window.location.hostname.replace('.pcom.edu','');
 	let site = springshareSites[domain];
