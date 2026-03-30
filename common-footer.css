@@ -137,23 +137,31 @@ nav#pcomlib-social-links ul li + li {
 		align-items: stretch;
 	}
 	ul li {
-  		display: inline-block;
-  		margin-bottom: 0;
-  		align-self: center;
-  		padding: 0 .5em;
+			display: inline-block;
+			margin-bottom: 0;
+			align-self: center;
+			padding: 0 .5em;
 	}
-	a {
+	a, button {
 		display: block;
 		line-height: 1;
 		white-space: nowrap;
+		padding: 0;
+		border: 0;
+		background: transparent;
+		vertical-align: baseline;
 	}
-	a:hover {
+	a:hover, button:hover {
 		text-decoration: underline;
+	}
+	button:focus {
+	  outline: solid 2px currentColor;
+		outline-offset: 4px !important;
 	}
 	a img {
 		height: 2em;
 	}
-	li + li a {
+	li + li a, li + li button {
 		position: relative;
 		top: .25em;
 	}
@@ -172,8 +180,26 @@ nav#pcomlib-social-links ul li + li {
 	#pcom-links-footer {
 		display: block;
 	}
+	#pcom-links-footer ul {
+		flex-wrap: wrap;
+	}
 	#pcom-copyright {
 		margin: .75rem 0;
 		text-align: center;
 	}
+}
+
+/***************
+ OSANO Styling
+ ***************/
+.osano-cm-widget { display: none; }
+.osano-cm-opt-out-honored-wrapper { display: none; }
+
+#pcom-footer li:has(button) {
+  display: none;
+}
+body:has(.osano-cm-widget) {
+  #pcom-footer li:has(button) {
+    display: block;
+  }
 }
